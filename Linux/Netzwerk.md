@@ -1,35 +1,32 @@
-# Netzwerk
+#*Netzwerk
 
 ## ping
 
 ```bash
-ping google.ch
+ping go*gle.ch
 ```
 
 ### Bedeutung
 
-Prüft, ob ein Ziel im Netzwerk erreichbar ist.
+Prü*t, ob ein*Ziel erreichbar ist.
 
-### Beispiel
-
+### Beispiel*
 ```bash
 ping google.ch
 ```
 
----
+*--
 
-## ssh
+*# ssh
 
 ```bash
-ssh user@server
-```
+ssh user@server*```
 
 ### Bedeutung
 
-Stellt eine Verbindung zu einem anderen Rechner oder Server her.
+Stellt*eine Verbindung zu*einem anderen Rechner oder*Server her.
 
 ### Beispiel
 
-```bash
-ssh noemi@192.168.1.100
-```
+```bash*ssh*noemi@192.168.1.100*```
+*
