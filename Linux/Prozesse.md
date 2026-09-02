@@ -46,9 +46,4 @@ top
 
 Zeigt laufende Prozesse und die Systemauslastung in Echtzeit an.
 
-### Beispiel
-
-```bash
-top
-```
 
