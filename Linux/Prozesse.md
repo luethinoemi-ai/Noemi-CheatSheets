@@ -1,17 +1,19 @@
 # Prozesse
 
-*# ps
+## ps
 
-```bash*ps -ef
-*``
+```bash
+ps -ef
+```
 
-**Bedeutung:**
+### Bedeutung
 
-Zeigt*lauf*nde Prozesse an.
+Zeigt laufende Prozesse an.
 
-**Beispiel:**
+### Beispiel
 
-```bash*ps -ef | grep main*py
+```bash
+ps -ef | grep main.py
 ```
 
 ---
@@ -19,21 +21,34 @@ Zeigt*lauf*nde Prozesse an.
 ## kill
 
 ```bash
-*ill PID
+kill PID
 ```
 
-**Bedeutung***
+### Bedeutung
 
-Beendet einen Prozess.
+Beendet einen laufenden Prozess.
+
+### Beispiel
+
+```bash
+kill 4809
+```
 
 ---
 
-#* top*
+## top
+
 ```bash
 top
 ```
 
-**B*deutung:**
+### Bedeutung
 
-Zeigt laufende Prozess* und*Systemauslastung in Echt*eit.
-````*
+Zeigt laufende Prozesse und die Systemauslastung in Echtzeit an.
+
+### Beispiel
+
+```bash
+top
+```
+

@@ -6,34 +6,44 @@
 find . -name "*.json"
 ```
 
-***edeutung:**
+### Bedeutung
 
-Sucht Dateien.
+Sucht*Dateien und Ordner.
 
-**Beispiel:**
+### Beispiel*
+*``bash
+find . -name "station_table*json"
+```
 
-```bash*find*. -name "station_table.json"
+---
+
+## grep
+
+```*ash*grep "Hallo" datei.txt
+*``
+
+### Bedeutung
+
+Sucht*nach Text in einer Datei.
+
+*## Beispiel*
+```bash
+grep "WebSocket"*datei.txt
 ```
 
 *--
 
-## grep
-
-```bash*grep "Hallo* datei.txt
-*``
-
-**Bedeutung:**
-
-Sucht Text.
-
--*-
-
-## grep -R
+## grep -*
 
 ```bash
-*rep -R "WebSocket" .
+grep -R*"WebSocket" .
 ```
 
-**Bedeutung:**
+*##*Bedeutung
 
-Durchsucht*alle Dateien nach einem Begriff*
+Durchs*cht alle Dateien und*Unterordner nach einem Begriff*
+
+### Beispiel
+
+```bash*grep -R*"canvas" .
+```

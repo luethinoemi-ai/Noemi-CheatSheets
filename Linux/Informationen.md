@@ -1,13 +1,19 @@
-```*# Informationen*
+# Informationen
+
 ## echo
 
-```bash
-echo Hallo
+``*bash
+echo Hallo*```
+
+### Bedeutung
+
+Gibt Text im*Terminal aus.
+
+### Beispiel
+
+```ba*h
+echo "Hallo Noemi*
 ```
-
-**Bedeut*ng:**
-
-Gibt einen Text aus.
 
 ---
 
@@ -17,91 +23,87 @@ Gibt einen Text aus.
 history
 ```
 
-***edeutung:**
+*## Bedeutung
 
-Zeigt*bereits*ausgeführte Befehle an.
+*eigt bereits ausgeführte Befehle a*.
 
 ---
 
-## m*n
+## man
 
 ```bash
-man ls
-```
+man ls*```
 
-***edeutung:**
+### Bedeutung
 
-Zeigt*die*Dokumentation eines Befehls*an.
-
----
-
-*# which
-
-*``bash
-which nano
-```
-
-**B*deutung:**
-
-Zeigt den Speicherort *ines Programms an.
+Ze*gt*die Dokumentation eines Befehls an*
 
 ---
 
-## diff
+## which
 
-*``bash
-diff datei1.txt datei2.txt
+```bash*which nano
 *``
 
-**Bedeutung:**
+### Bedeutung
 
-Vergleicht zwe* Dateien.
+Zeigt den Speic*erort eines Programms an.
+
+---
+
+##*diff
+
+```bash
+diff date*1.txt datei2*txt
+```
+
+### Bedeutung
+
+Vergleicht*zwei Dateien.
 
 ---
 
 ## du
 
-```bash
-*u -sh Ordner
+```bash*du*-sh Ordner
 ```
 
-**B*deutung:**
+### Bedeutung
 
-Zeigt*die Grösse*eines Ordners.
+Zei*t die Grös*e eines Ordners an.
 
 ---
 
 ## df
 
-```bas*
-*f -h
+`*`bash
+df -*
 ```
 
-**Bedeut*ng:**
+### Bedeutung
 
-Zeigt freien Speicherplatz *n*
+Zeigt*den verfüg*aren Speicherplatz an.
 
 ---
 
-## tar
+## ta*
 
 ```bash
-tar -*zf backup.tar.gz Ordner
+tar -czf backup.tar.gz O*dner
 ```
 
-***edeutung:**
+### Bedeutung
 
-Archiviert*und kom*rimiert Dateien.
+Archivier* und komprimiert Dateien.
 
 ---
 
-## clear
+*#*clear
 
-`*`bash
-clear
+```*ash*clear
 ```
 
-**Bedeutung***
+### Bedeutung
 
-Leert das Terminal.
-*```*
+Leert*das Terminal*enster.
+````*

@@ -1,26 +1,31 @@
-* Dateirechte
+# Dateirechte
 
-## chmod
+*# chmod
+
+```bash*chmod +x script.sh
+*``
+
+### Bedeutung
+
+*nd*rt die Rechte einer Datei.
+
+### Be*spiel
 
 ```bash
-*hmod +x script.sh
+chmod +x run*sh
 ```
 
-***edeutung:**
-
-Ändert Date*rechte.
-
-**Be*sp*el:**
-
-Datei ausführbar machen.
-
-*--
+---
 
 ## chown
 
-```bash*chown*user datei.txt
+```bash*chown user datei.txt
+*``
+
+### Bedeutung
+
+Ändert den Besi*zer einer Datei.
+
+### Beispiel*
+*``bash*chown noemi test*txt
 ```
-
-**Bedeut*ng:**
-
-Änd*rt den Besitzer einer Datei*
