@@ -10,28 +10,47 @@ Wichtige Linux-Befehle zum Suchen von Dateien, Ordnern und Inhalten.
 find . -name "*.json"
 ```
 
-*##*Bedeutung
+*## Bedeutung
 
-Sucht Dateien oder Ordn*r nach Namen.
+Sucht Dateien oder O*dner*anhand ihres*Namens.
 
 ### Beispiel
 
-```ba*h
-find . -name "station_table.json*
+```bash*find*. -name "station_table.json"
 ```
 
-Findet alle Dateien mit dies*m Namen im aktuellen Verzeichnis u*d seinen Unterordnern.
+*ind*t alle Dateien mit diesem Namen im*aktuellen Verzeichnis und allen Un*erordnern.
 
 ---
 
-## gr*p
+*# find nach Date*typ
 
 ```bash
-grep "Hallo" datei.txt*```
+find . -type*f*```
 
 ### Bedeutung
 
-Sucht nach Tex**innerhalb einer Datei.
+S*cht*nur Dateien.
+
+### Beispiel
+
+```bas*
+find . -type*f -name*"*.txt"
+```
+
+*indet alle Textdate*en.
+
+---
+
+## grep
+
+```bash
+grep*"Hallo" datei.txt
+```
+
+*##*Bedeutung
+
+Sucht*nach einem Text*innerhalb einer Datei.
 
 ### Beispi*l
 
@@ -39,99 +58,111 @@ Sucht nach Tex**innerhalb einer Datei.
 grep "WebSocket" datei.*xt
 ```
 
-Zeigt*alle Zeilen an, die das Wort `WebS*cket` enthalten.
+*e*gt alle Zeilen an, die das*Wort `WebSocket` enthalten.
 
 ---
 
-## grep -R
-*```bash
-*rep -R "Canvas" .
-```
+*# grep -i
 
-*##*Bedeutung
-
-Durchs*cht alle Dateien und Unterordner r*kursiv.
-
-### Beispiel
-
-```bash*grep -R "Web*ocket" .
-```
-
-*ucht nach dem Begriff `WebSocket` *m gesamten Projekt.
-
----
-
-## locat*
-
-```bash
-loc*te nano
+```bash*grep*-i "linux" date*.txt
 ```
 
 ### Bedeutung
 
-Sucht*Dateien über eine Datenbank und*ist sehr schnell.
-
-### Beispiel
-
-`*`bash
-*ocate config.json*```
-
-Zeigt alle bekannten*Dateien mit diesem Namen an.
-
----
-*## where*s
-
-```bash*whereis python3*```
-
-### Bedeutung
-
-Zeigt*Programm*atei, Qu*llcode und Handbuchseiten*eines Programms.
+Sucht*ohne*Beachtung von Gross- und*Kleinschreibung.
 
 ### Beispiel
 
 ``*bash
-*hereis*git
+*rep -i "no*mi" benutzer.txt
+```
+
+*ind*t sowohl `Noemi`, `*OEMI` als auch*`noemi`.
+
+---
+
+*# grep -R
+
+*``bash*grep -R "Canvas* .
+```
+
+### Bedeutung
+
+Durchsucht*alle Dateien und Unterordner rekur*iv.
+
+### Beispiel
+
+```bash
+grep -R*"WebSocket" .
+```
+
+*ucht nach dem*Begriff im gesamten Projekt.
+
+---
+*##*locate
+
+```bash
+locate nano
+```
+
+*## Bedeutung
+
+Sucht*Dateien über*eine Datenbank und liefert Ergebni*se sehr schnell.
+
+### Beispiel
+
+``*bash
+locate config.json
+```
+
+*eigt bekannte*Dateien mit diesem Namen an.
+
+---
+*## which
+
+```bash
+which python3
+``*
+
+### Bedeutung
+
+Zeigt*den Pfad eines Program*s an.
+
+### Beispiel
+
+```bash*which*git
 ```
 
 Mögliche Ausgabe:
 
 ```tex*
-git: /*sr/bin/git /usr/share/man/man1/git*1.gz
+/usr/bin/git
 ```
 
-*--
+---
 
-##*which
+##*whereis
 
-```bash*which*python3
-```
+```bash*whereis python3*```
 
 ### Bedeutung
 
-Zeigt*den*genauen Pfad eines ausführ*aren Programms.
+Find*t*Programmdateien, Quellcode und Han*buchseiten.
 
 ### Beispiel
 
-```*ash
-which node
+```bash*whereis ssh
 ```
 
-*ögliche Ausgabe:
+Mög*iche Ausgabe:
 
-*``text
-/usr/bin/node
+```text*ssh: /usr*bin/ssh /usr/share/man/man1/*sh.1.gz
 ```
 
 *--
 
-*# Merken für die Praxis
+## Mer*en für die Praxis
 
-| B*fe*l | Zweck |
-|----------|----------*
-| find | Dateien suchen |
-| grep*| Text in*Dateien suchen |
-| grep*-R | Ganze*Ordner durchsuchen |
-| locate*| Schn*lle Dateisuche |
-| whereis*| Programmdate*en finden |
-| which*| Pf*d eines Programms anzeigen |
-````*
+| Befehl |*Verwendung |
+|---------**--------|
+| find*
