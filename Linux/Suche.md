@@ -6,163 +6,223 @@ Wichtige Linux-Befehle zum Suchen von Dateien, Ordnern und Inhalten.
 
 ## find
 
+Dateien und Ordner anhand ihres Namens suchen.
+
+### Syntax
+
+```bash
+find <pfad> -name "<name>"
+```
+
+### Beispiele
+
+Datei suchen:
+
+```bash
+find . -name "station_table.json"
+```
+
+Alle JSON-Dateien finden:
+
 ```bash
 find . -name "*.json"
 ```
 
-*## Bedeutung
+### N*tzliche Optionen
 
-Sucht Dateien oder O*dner*anhand ihres*Namens.
-
-### Beispiel
-
-```bash*find*. -name "station_table.json"
-```
-
-*ind*t alle Dateien mit diesem Namen im*aktuellen Verzeichnis und allen Un*erordnern.
-
----
-
-*# find nach Date*typ
+Nur Dateien such*n:
 
 ```bash
-find . -type*f*```
+*ind . -type f
+*``
 
-### Bedeutung
+Nur Ordner suchen:
 
-S*cht*nur Dateien.
-
-### Beispiel
-
-```bas*
-find . -type*f -name*"*.txt"
+```bash
+fi*d . -type*d
 ```
 
-*indet alle Textdate*en.
+*ext*ateien suchen:
+
+```bash
+find . -ty*e f -name "*.txt"
+```
 
 ---
 
 ## grep
 
-```bash
-grep*"Hallo" datei.txt
-```
+Text innerhalb einer Datei suchen.
 
-*##*Bedeutung
-
-Sucht*nach einem Text*innerhalb einer Datei.
-
-### Beispi*l
+### Syntax
 
 ```bash
-grep "WebSocket" datei.*xt
+grep "<text>" <datei>
 ```
 
-*e*gt alle Zeilen an, die das*Wort `WebSocket` enthalten.
+### Beispiele
+
+Nach "WebSocket" suchen:
+
+```bash
+grep "WebSocket" datei.txt
+```
+
+Alle Treffer anzeigen:
+
+```bash
+grep "ERROR" logfile.log
+```
 
 ---
 
-*# grep -i
+## grep -i
 
-```bash*grep*-i "linux" date*.txt
-```
-
-### Bedeutung
-
-Sucht*ohne*Beachtung von Gross- und*Kleinschreibung.
-
-### Beispiel
-
-``*bash
-*rep -i "no*mi" benutzer.txt
-```
-
-*ind*t sowohl `Noemi`, `*OEMI` als auch*`noemi`.
-
----
-
-*# grep -R
-
-*``bash*grep -R "Canvas* .
-```
-
-### Bedeutung
-
-Durchsucht*alle Dateien und Unterordner rekur*iv.
+Gross- und Kleinschreibung ignorieren.
 
 ### Beispiel
 
 ```bash
-grep -R*"WebSocket" .
+grep -i "noemi" benutzer.txt
 ```
 
-*ucht nach dem*Begriff im gesamten Projekt.
+Findet:
+
+```text
+Noemi
+NOEMI
+noemi
+```
 
 ---
-*##*locate
 
-```bash
-locate nano
-```
+## grep -R
 
-*## Bedeutung
-
-Sucht*Dateien über*eine Datenbank und liefert Ergebni*se sehr schnell.
+Rekursiv in allen Dateien und Unterordnern suchen.
 
 ### Beispiel
 
-``*bash
+```bash
+grep -R "WebSocket" .
+```
+
+Suche im gesamten Projektverzeichnis.
+
+---
+
+## locate
+
+Dateien über eine Datenbank sehr schnell suchen.
+
+### Beispiel
+
+```bash
 locate config.json
 ```
 
-*eigt bekannte*Dateien mit diesem Namen an.
-
----
-*## which
+### Datenbank aktualisieren
 
 ```bash
-which python3
-``*
+sudo updatedb
+```
 
-### Bedeutung
+---
 
-Zeigt*den Pfad eines Program*s an.
+## which
+
+Zeigt den Pfad eines Programms.
 
 ### Beispiel
 
-```bash*which*git
+```bash
+which python3
 ```
 
 Mögliche Ausgabe:
 
-```tex*
-/usr/bin/git
+```text
+/usr/bin/python3
 ```
 
 ---
 
-##*whereis
+## whereis
 
-```bash*whereis python3*```
-
-### Bedeutung
-
-Find*t*Programmdateien, Quellcode und Han*buchseiten.
+Zeigt Programmdateien, Quellcode und Handbuchseiten.
 
 ### Beispiel
 
-```bash*whereis ssh
+```bash
+whereis ssh
 ```
 
-Mög*iche Ausgabe:
+Mögliche Ausgabe:
 
-```text*ssh: /usr*bin/ssh /usr/share/man/man1/*sh.1.gz
+```text
+ssh: /usr/bin/ssh /usr/share/man/man1/ssh.1.gz
+```
+
+---
+
+## Praktische Kombinationen
+
+Datei finden und Inhalt durchsuchen:
+
+```bash
+find . -name "*.txt"
+grep -R "Fehler" .
+```
+
+Py*hon-Installation prüfen:
+
+```bash
+*hich python3
+whereis python3
 ```
 
 *--
 
-## Mer*en für die Praxis
+## Merken für die Praxis
 
-| Befehl |*Verwendung |
-|---------**--------|
-| find*
+### *ach Dateien suchen
+
+```bash
+find .*-name "datei.txt"
+```
+
+### Nach Te*t suchen
+
+```bash
+grep "Text" date*.txt
+```
+
+### Im ganzen Projekt su*hen
+
+```bash
+grep -R "Text" .
+```
+*### Programm finden
+
+```bash
+which*git
+```
+
+### Schnell nach Dateien *uchen
+
+```bash
+locate config.json
+*``
+
+---
+
+## Spickzettel
+
+```text
+f*nd      → Dateien und Ordner suche*
+grep      → Text in Dateien suche*
+grep -R   → Rekursiv suchen
+grep *i   → Gross-/Kleinschreibung ignor*eren
+locate    → Schnelle Dateisuc*e
+which     → Programmpfad anzeige*
+whereis   → Programmdateien finde*
+```
