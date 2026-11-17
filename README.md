@@ -13,6 +13,14 @@
 
 ---
 
+## 📖 Documentation
+
+**Website:** [luethinoemi-ai.github.io/Noemi-CheatSheets](https://luethinoemi-ai.github.io/Noemi-CheatSheets/)
+
+**Repository:** [github.com/luethinoemi-ai/Noemi-CheatSheets](https://github.com/luethinoemi-ai/Noemi-CheatSheets)
+
+---
+
 ## 🎯 Purpose
 
 This repository contains notes, cheat sheets, summaries and explanations of concepts learned during projects, school and work.
