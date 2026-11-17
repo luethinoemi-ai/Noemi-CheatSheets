@@ -122,17 +122,3 @@ chmod 755 skript.sh
 ```{warning}
 Vergib nie `chmod 777`. Dann darf jeder alles mit der Datei machen, das ist ein Sicherheitsrisiko.
 ```
-
----
-
-## 🗺️ Weitere Linux-Themen
-
-Diese Themen werden in den jeweiligen Cheatsheets genauer erklärt:
-
-- Navigation
-- Dateien
-- Dateirechte
-- Prozesse
-- Netzwerk
-- Suche
-- Informationen
