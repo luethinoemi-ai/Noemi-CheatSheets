@@ -127,7 +127,6 @@ git push
 
 - [x] Clean structure with Sphinx and the Furo theme
 - [x] Linux, networking, web and Vue.js basics
-- [ ] Add Business Analysis notes
 - [ ] Publish the docs online with GitHub Pages
 - [ ] Add more examples and diagrams
 
@@ -135,6 +134,6 @@ git push
 
 <div align="center">
 
-Made with 💖 and a lot of coffee by **Nömi**
+Made by **Noemi** (and a lot of redbull)
 
 </div>
