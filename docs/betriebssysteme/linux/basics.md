@@ -4,39 +4,42 @@ Kurzer Einstieg in Linux: Was es ist, wie es aufgebaut ist und wie du dich im Te
 
 ---
 
-## 🐧 Was ist Linux?
+## Was ist Linux?
 
-Linux ist ein **Open-Source-Betriebssystem**. Der Quellcode ist öffentlich und frei nutzbar. Es wird häufig eingesetzt für:
+Linux ist ein Open-Source-Betriebssystem. Der Quellcode ist öffentlich verfügbar und kann von jedem eingesehen, verwendet und verändert werden.
+
+Linux wird häufig eingesetzt für:
 
 - Server
 - Cloud-Systeme
 - Embedded-Systeme
 - Softwareentwicklung
+- Container-Plattformen
 
 ```{note}
-Genau genommen ist "Linux" nur der **Kernel**. Zusammen mit Programmen und Desktop ergibt das eine **Distribution** (z. B. Ubuntu, Debian oder Kali Linux).
+Genau genommen ist Linux nur der Kernel. Zusammen mit Programmen, Bibliotheken und einer Desktop-Umgebung entsteht eine Linux-Distribution wie Ubuntu, Debian oder Fedora.
 ```
 
 ---
 
-## 💡 Wichtige Konzepte
+## Wichtige Konzepte
 
 ### Alles ist eine Datei
 
 In Linux werden viele Ressourcen wie Dateien behandelt:
 
 - Normale Dateien
-- Ordner
-- Geräte (unter `/dev`)
-- Prozessinformationen (unter `/proc`)
+- Verzeichnisse (Ordner)
+- Geräte unter `/dev`
+- Prozessinformationen unter `/proc`
 
-```{tip}
-Weil alles wie eine Datei behandelt wird, kannst du mit denselben Befehlen (`cat`, `ls`, `cp`) sehr unterschiedliche Dinge ansehen.
+```{note}
+Da viele Komponenten als Dateien dargestellt werden, können dieselben Werkzeuge für unterschiedliche Aufgaben verwendet werden.
 ```
 
 ### Verzeichnisstruktur
 
-Alles beginnt beim Root-Verzeichnis `/`. Es gibt keine Laufwerksbuchstaben wie `C:` unter Windows.
+Das gesamte Dateisystem beginnt beim Root-Verzeichnis:
 
 ```text
 /
@@ -47,34 +50,34 @@ Alles beginnt beim Root-Verzeichnis `/`. Es gibt keine Laufwerksbuchstaben wie `
 └── tmp
 ```
 
-| Ordner | Bedeutung |
+| Verzeichnis | Bedeutung |
 | :--- | :--- |
-| `/` | Root-Verzeichnis (Startpunkt von allem) |
+| `/` | Root-Verzeichnis, Ausgangspunkt des Dateisystems |
 | `/home` | Benutzerverzeichnisse |
-| `/etc` | Konfigurationsdateien |
+| `/etc` | Systemweite Konfigurationsdateien |
 | `/var` | Logs und veränderbare Daten |
 | `/usr` | Programme und Bibliotheken |
 | `/tmp` | Temporäre Dateien |
-| `/dev` | Geräte (z. B. Festplatten) |
+| `/dev` | Geräte und Hardware |
 | `/root` | Home-Verzeichnis des Administrators |
 
-```{attention}
-`/` (Root-Verzeichnis) und `/root` (Home des Administrators) sind nicht dasselbe.
+```{warning}
+Das Root-Verzeichnis `/` und das Verzeichnis `/root` sind nicht dasselbe.
 ```
 
 ---
 
-## 💻 Terminal
+## Terminal
 
-Das Terminal steuert das System über Befehle. Die Shell (meist **Bash**) führt sie aus.
+Das Terminal ermöglicht die Steuerung des Systems über Befehle. Die Eingaben werden von einer Shell, meist Bash, verarbeitet.
 
 | Befehl | Bedeutung |
 | :--- | :--- |
-| `pwd` | Zeigt den aktuellen Ordner |
-| `ls` | Listet Dateien und Ordner auf |
-| `cd Downloads` | Wechselt in einen Ordner |
-| `cd ..` | Geht einen Ordner nach oben |
-| `cd ~` | Geht ins eigene Home-Verzeichnis |
+| `pwd` | Aktuelles Verzeichnis anzeigen |
+| `ls` | Dateien und Ordner anzeigen |
+| `cd Downloads` | In ein Verzeichnis wechseln |
+| `cd ..` | Eine Ebene nach oben wechseln |
+| `cd ~` | Zum Home-Verzeichnis wechseln |
 
 Beispiel:
 
@@ -84,21 +87,25 @@ ls
 cd Downloads
 ```
 
-```{tip}
-Mit der **Tab-Taste** vervollständigt das Terminal Namen automatisch. Mit **Pfeil nach oben** holst du den letzten Befehl zurück.
+```{note}
+Mit der Tab-Taste können Dateinamen und Verzeichnisse automatisch vervollständigt werden. Mit der Pfeiltaste nach oben lassen sich vorherige Befehle erneut aufrufen.
 ```
 
 ---
 
-## 🔐 Dateirechte
+## Dateirechte
 
-Jede Datei hat Rechte für drei Gruppen: **Besitzer**, **Gruppe** und **Andere**.
+Jede Datei besitzt Berechtigungen für drei Benutzergruppen:
 
-| Zeichen | Bedeutung | Zahl |
-| :-: | :--- | :-: |
-| `r` | read (lesen) | 4 |
-| `w` | write (schreiben) | 2 |
-| `x` | execute (ausführen) | 1 |
+- Besitzer (Owner)
+- Gruppe (Group)
+- Andere (Others)
+
+| Zeichen | Bedeutung | Wert |
+| :---: | :--- | :---: |
+| `r` | Lesen (read) | 4 |
+| `w` | Schreiben (write) | 2 |
+| `x` | Ausführen (execute) | 1 |
 
 Beispiel:
 
@@ -107,18 +114,26 @@ Beispiel:
 ```
 
 | Teil | Bedeutung |
-| :-: | :--- |
-| `-` | Typ: `-` = Datei, `d` = Ordner |
-| `rwx` | Besitzer darf lesen, schreiben, ausführen |
+| :---: | :--- |
+| `-` | Datei (`d` = Verzeichnis) |
+| `rwx` | Besitzer darf lesen, schreiben und ausführen |
 | `r-x` | Gruppe darf lesen und ausführen |
 | `r-x` | Andere dürfen lesen und ausführen |
 
-Die Rechte lassen sich auch als Zahl schreiben (`rwx` = 4+2+1 = 7, `r-x` = 4+1 = 5):
+Die Rechte können auch numerisch dargestellt werden:
+
+```text
+rwx = 4 + 2 + 1 = 7
+r-x = 4 + 1     = 5
+r-x = 4 + 1     = 5
+```
+
+Daraus ergibt sich:
 
 ```bash
 chmod 755 skript.sh
 ```
 
 ```{warning}
-Vergib nie `chmod 777`. Dann darf jeder alles mit der Datei machen, das ist ein Sicherheitsrisiko.
+Die Berechtigung `777` gibt allen Benutzern vollständigen Zugriff auf eine Datei oder ein Verzeichnis. Sie sollte nur in Ausnahmefällen verwendet werden.
 ```
