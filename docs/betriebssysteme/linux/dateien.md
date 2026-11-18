@@ -1,17 +1,17 @@
-# Dateien
+# 📄 Dateien
 
-Befehle zum Erstellen, Anzeigen und Bearbeiten von Dateien im Terminal.
+Dateien enthalten Informationen wie Texte, Programme oder Konfigurationen.
 
----
+Mit den folgenden Befehlen kannst du Dateien erstellen, bearbeiten, anzeigen, kopieren, verschieben und löschen.
 
 ## Übersicht
 
 | Befehl | Bedeutung |
-| :--- | :--- |
+|---------|---------|
 | `touch` | Erstellt eine leere Datei |
-| `nano` | Bearbeitet eine Datei im Terminal |
-| `cat` | Zeigt den ganzen Inhalt an |
-| `less` | Zeigt den Inhalt mit Scrollfunktion an |
+| `nano` | Bearbeitet eine Datei |
+| `cat` | Zeigt den kompletten Inhalt |
+| `less` | Zeigt den Inhalt mit Scrollfunktion |
 | `head` | Zeigt die ersten Zeilen |
 | `tail` | Zeigt die letzten Zeilen |
 | `cp` | Kopiert eine Datei |
@@ -20,7 +20,7 @@ Befehle zum Erstellen, Anzeigen und Bearbeiten von Dateien im Terminal.
 
 ---
 
-## Erstellen und bearbeiten
+## ✏️ Dateien erstellen und bearbeiten
 
 ### touch
 
@@ -30,53 +30,63 @@ Erstellt eine neue leere Datei.
 touch test.txt
 ```
 
-```{note}
-Existiert die Datei schon, ändert `touch` nur das Änderungsdatum. Der Inhalt bleibt erhalten.
-```
+💡 **Hinweis**
+
+Existiert die Datei bereits, wird sie nicht überschrieben. Linux aktualisiert lediglich das Änderungsdatum.
 
 ### nano
 
-Bearbeitet eine Datei im Terminal. Gibt es sie noch nicht, wird sie beim Speichern erstellt.
+Öffnet eine Datei im Terminal zum Bearbeiten.
 
 ```bash
 nano test.txt
 ```
 
-| Tastenkombination | Aktion |
-| :--- | :--- |
-| `Strg + O`, dann `Enter` | Speichern |
+Wichtige Tastenkombinationen:
+
+| Tastenkombination | Bedeutung |
+|---------|---------|
+| `Strg + O` | Speichern |
+| `Enter` | Dateiname bestätigen |
 | `Strg + X` | Beenden |
 | `Strg + W` | Suchen |
 
 ---
 
-## Anzeigen
+## 👀 Dateien anzeigen
 
 ### cat
 
-Zeigt den ganzen Inhalt einer Datei an.
+Zeigt den gesamten Inhalt einer Datei an.
 
 ```bash
 cat test.txt
 ```
 
-```{tip}
-`cat` eignet sich für kurze Dateien. Bei langen Dateien ist `less` besser.
-```
+💡 **Hinweis**
+
+Für kurze Dateien geeignet.
 
 ### less
 
-Zeigt eine Datei seitenweise mit Scrollfunktion an.
+Zeigt den Inhalt einer Datei seitenweise an.
 
 ```bash
 less test.txt
 ```
 
-| Taste | Aktion |
-| :--- | :--- |
-| `Pfeiltasten` oder `Leertaste` | Scrollen |
+Nützliche Tasten:
+
+| Taste | Bedeutung |
+|---------|---------|
+| `Pfeiltasten` | Scrollen |
+| `Leertaste` | Eine Seite weiter |
 | `/wort` | Nach einem Wort suchen |
 | `q` | Beenden |
+
+💡 **Hinweis**
+
+`less` eignet sich besonders für grosse Dateien.
 
 ### head
 
@@ -86,7 +96,7 @@ Zeigt die ersten 10 Zeilen einer Datei.
 head test.txt
 ```
 
-Eine andere Anzahl an Zeilen gibst du mit `-n` an:
+Erste 5 Zeilen anzeigen:
 
 ```bash
 head -n 5 test.txt
@@ -100,25 +110,25 @@ Zeigt die letzten 10 Zeilen einer Datei.
 tail test.txt
 ```
 
-Auch hier funktioniert `-n`:
+Letzte 5 Zeilen anzeigen:
 
 ```bash
 tail -n 5 test.txt
 ```
 
-Mit `-f` wird die Datei live verfolgt. Neue Zeilen erscheinen sofort. Beenden mit `Strg + C`.
+Datei live überwachen:
 
 ```bash
 tail -f /var/log/syslog
 ```
 
-```{tip}
-`tail -f` wird oft bei Log-Dateien benutzt, um zu sehen, was gerade passiert.
-```
+💡 **Hinweis**
+
+`tail -f` wird oft bei Log-Dateien verwendet. Neue Einträge erscheinen automatisch auf dem Bildschirm.
 
 ---
 
-## Kopieren, verschieben, löschen
+## 📦 Dateien kopieren, verschieben und löschen
 
 ### cp
 
@@ -128,12 +138,29 @@ Kopiert eine Datei.
 cp test.txt kopie.txt
 ```
 
+Beispiel:
+
+```text
+test.txt
+↓
+kopie.txt
+```
+
+Es entstehen zwei Dateien.
+
 ### mv
 
-Verschiebt eine Datei in einen anderen Ordner oder benennt sie um.
+Verschiebt eine Datei oder benennt sie um.
+
+Datei verschieben:
 
 ```bash
 mv test.txt Dokumente/
+```
+
+Datei umbenennen:
+
+```bash
 mv test.txt neu.txt
 ```
 
@@ -145,10 +172,23 @@ Löscht eine Datei.
 rm test.txt
 ```
 
-```{warning}
-Gelöschte Dateien landen **nicht** im Papierkorb. Sie sind weg. Mit `rm -i` fragt Linux vor dem Löschen nach.
+⚠️ **Warnung**
+
+Gelöschte Dateien landen nicht im Papierkorb und können meist nicht einfach wiederhergestellt werden.
+
+Für eine Sicherheitsabfrage:
+
+```bash
+rm -i test.txt
 ```
 
-```{attention}
-Mit `mv` und `cp` kann eine Datei mit gleichem Namen ohne Nachfrage überschrieben werden. Mit der Option `-i` fragt Linux vorher nach.
+⚠️ **Achtung**
+
+`cp` und `mv` können Dateien mit gleichem Namen überschreiben.
+
+Für eine Sicherheitsabfrage:
+
+```bash
+cp -i test.txt ziel/
+mv -i test.txt ziel/
 ```
