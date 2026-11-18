@@ -26,7 +26,7 @@ Prozesse sind laufende Programme oder Befehle. Linux weist jedem Prozess beim St
 
 So gehst du vor, wenn ein Programm hängt oder beendet werden muss:
 
-```mermaid
+```{mermaid}
 flowchart LR
     A["1. Prozess & PID finden<br>ps -ef | grep name"] --> B["2. Sauber beenden<br>kill PID"]
     B --> C{"Läuft der Prozess<br>immer noch?"}
