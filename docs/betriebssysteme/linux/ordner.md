@@ -25,8 +25,8 @@ Verzeichnisse (Ordner) strukturieren deine Dateien unter Linux. Mit wenigen Grun
 
 Welcher Löschbefehl passt zu deiner Situation?
 
-```mermaid
-flowchart TD
+```{mermaid}
+flowchart LR
     A["Ordner löschen"] --> B{"Ist der Ordner<br>komplett leer?"}
     B -->|Ja| C["rmdir Ordner<br>(sicher, löscht nur leere Ordner)"]
     B -->|Nein| D{"Standort mit<br>pwd geprüft?"}
