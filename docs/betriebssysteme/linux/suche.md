@@ -1,12 +1,12 @@
 # Suche
 
-Wichtige Linux-Befehle zum Suchen von Dateien, Ordnern und Inhalten.
+Linux bietet verschiedene Werkzeuge, um Dateien, Verzeichnisse, Programme oder Inhalte schnell zu finden.
 
 ---
 
 ## find
 
-Dateien und Ordner anhand ihres Namens suchen.
+Sucht Dateien und Verzeichnisse anhand ihres Namens oder anderer Kriterien.
 
 ### Syntax
 
@@ -22,207 +22,177 @@ Datei suchen:
 find . -name "station_table.json"
 ```
 
-Alle JSON-Dateien finden:
+Alle JSON-Dateien suchen:
 
 ```bash
 find . -name "*.json"
 ```
 
-### N*tzliche Optionen
-
-Nur Dateien such*n:
+Nur*Dateien suchen:
 
 ```bash
-*ind . -type f
-*``
-
-Nur Ordner suchen:
-
-```bash
-fi*d . -type*d
+find . -t*pe f
 ```
 
-*ext*ateien suchen:
+Nur Verzeichnisse suchen*
 
-```bash
-find . -ty*e f -name "*.txt"
+*``bash
+find . -type d
+``*
+
+Alle Textdateien suchen:
+
+*``bash
+find . -type f -name*"*.txt"
+```
+
+```{note}
+Der*Punkt (`.`) steht für das aktuelle*Verzeichnis*
 ```
 
 ---
 
 ## grep
 
-Text innerhalb einer Datei suchen.
+Sucht nach*Text innerhalb einer Datei.
 
-### Syntax
+###*Syntax
 
 ```bash
-grep "<text>" <datei>
+grep "<text>"*<datei>
 ```
 
-### Beispiele
+### Beispiel
 
-Nach "WebSocket" suchen:
+Nach "*ebSocket" suchen:
 
 ```bash
-grep "WebSocket" datei.txt
+grep "*ebSocket" datei.txt
 ```
 
-Alle Treffer anzeigen:
+In*einer Log-Date* nach Fehlern suchen:
 
 ```bash
-grep "ERROR" logfile.log
+gre**"ERROR" logfile.log
 ```
 
 ---
 
-## grep -i
+##*grep -i
 
-Gross- und Kleinschreibung ignorieren.
+Ignoriert Gross- und*Kleinschreibung.
 
 ### Beispiel
 
-```bash
-grep -i "noemi" benutzer.txt
+``*bash*grep -i "noemi" benutzer*txt
 ```
 
-Findet:
+Findet beispielsweise*
 
 ```text
 Noemi
-NOEMI
-noemi
+NOEMI*noemi
 ```
 
 ---
 
-## grep -R
+## grep -*
 
-Rekursiv in allen Dateien und Unterordnern suchen.
+Durchsucht alle*Dateien und Unterverzeichnisse.
 
-### Beispiel
+*## Beispiel
 
 ```bash
-grep -R "WebSocket" .
+grep -R "*ebSocket" .
 ```
 
-Suche im gesamten Projektverzeichnis.
+Durch*ucht das gesamte aktuelle Verzeich*is rek*rsiv.
 
 ---
 
 ## locate
 
-Dateien über eine Datenbank sehr schnell suchen.
+Sucht Datei*n*mithilfe einer Daten*ank.
 
 ### Beispiel
 
 ```bash
-locate config.json
+locate*config.json
 ```
 
-### Datenbank aktualisieren
+```{note}
+`*ocate` ist meist deutlich schnelle* als `*ind`, da es nicht direkt das*Dateisystem durchsucht.
+```
+
+D*tenbank aktualisieren:
 
 ```bash
-sudo updatedb
+su*o updated*
 ```
 
 ---
 
 ## which
 
-Zeigt den Pfad eines Programms.
+Zeigt*den Speicherort eines Programms an*
 
-### Beispiel
-
+### Beispiel*
 ```bash
 which python3
 ```
 
-Mögliche Ausgabe:
+*ögliche Ausgabe:
 
 ```text
-/usr/bin/python3
+/usr/bin*python3
 ```
 
 ---
 
 ## whereis
 
-Zeigt Programmdateien, Quellcode und Handbuchseiten.
+*eigt Programmdateien, Hand*uchseiten und weitere zugehörige D*teien an*
 
 ### Beispiel
 
 ```bash
-whereis ssh
-```
+whereis ss**```
 
 Mögliche Ausgabe:
 
-```text
-ssh: /usr/bin/ssh /usr/share/man/man1/ssh.1.gz
-```
-
----
-
-## Praktische Kombinationen
-
-Datei finden und Inhalt durchsuchen:
-
-```bash
-find . -name "*.txt"
-grep -R "Fehler" .
-```
-
-Py*hon-Installation prüfen:
-
-```bash
-*hich python3
-whereis python3
-```
-
-*--
-
-## Merken für die Praxis
-
-### *ach Dateien suchen
-
-```bash
-find .*-name "datei.txt"
-```
-
-### Nach Te*t suchen
-
-```bash
-grep "Text" date*.txt
-```
-
-### Im ganzen Projekt su*hen
-
-```bash
-grep -R "Text" .
-```
-*### Programm finden
-
-```bash
-which*git
-```
-
-### Schnell nach Dateien *uchen
-
-```bash
-locate config.json
+```text*ssh: /usr/bin/ssh /usr*share/man/man1/ssh.1.gz
 *``
 
 ---
 
-## Spickzettel
+## Praktische Kombination*n
 
-```text
-f*nd      → Dateien und Ordner suche*
-grep      → Text in Dateien suche*
-grep -R   → Rekursiv suchen
-grep *i   → Gross-/Kleinschreibung ignor*eren
-locate    → Schnelle Dateisuc*e
-which     → Programmpfad anzeige*
-whereis   → Programmdateien finde*
-```
+Date*en finden:
+
+*``bash
+find . -name "*.txt"
+*``
+
+Text in einem Projekt suchen:
+*```bash*grep -R "Fehler" .
+``*
+
+Python-Installation prüfen:
+
+```*ash*which python3
+whereis python3
+*``
+
+---
+
+## Häufig verwend*te Befehle
+
+| Befehl |*Verwendung |
+| :--- |*:--- |
+| `find`*| Dateien und Verzeichnisse suchen*|
+|*`grep` | Text in Dateien suchen |
+* `grep -R` | Rekursiv suchen*|
+| `grep -i` | Gross-*und Kleinschreibung ignorieren |
+|*`*ocate` | Dateien über*eine Datenbank suchen |
+| `which` **Programmpfad anzeigen |
+| `where*s` | Programmdateien und*Dokumentation finden*|
