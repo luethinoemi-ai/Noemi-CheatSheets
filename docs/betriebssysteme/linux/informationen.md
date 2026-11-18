@@ -1,20 +1,18 @@
 # Informationen
 
-Nützliche Linux-Befehle für Informationen über System, Dateien und Befehle.
+Nützliche Befehle, um Informationen über das System, Dateien und installierte Programme abzurufen.
 
 ---
 
 ## echo
 
+Gibt Text im Terminal aus.
+
 ```bash
 echo Hallo
 ```
 
-### Bedeutung
-
-Gibt Text im Terminal aus.
-
-### Beispiel
+Beispiel:
 
 ```bash
 echo "Hallo Noemi"
@@ -30,55 +28,53 @@ Hallo Noemi
 
 ## history
 
-```bash
-history
-```
-
-### Bedeutung
-
 Zeigt die bisher ausgeführten Befehle an.
 
-### Beispiel
+```bash
+history
+```
+
+Beispiel:
 
 ```bash
 history
 ```
 
-Nützlich, um ältere Befehle wiederzufinden.
+Nützlich, um bereits verwendete Befehle nachzuschlagen.
 
 ---
 
 ## man
 
+Zeigt die Handbuchseite eines Befehls an.
+
 ```bash
 man ls
 ```
 
-### Bedeutung
-
-Zeigt die Handbuchseite (Manual) eines Befehls an.
-
-### Beispiel
+Beispiel:
 
 ```bash
 man cp
 ```
 
-Zeigt die Dokumentation des Befehls `cp`.
+Öffnet die Dokumentation des Befehls `cp`.
+
+```{note}
+Mit `q` wird die Handbuchseite wieder verlassen.
+```
 
 ---
 
 ## which
 
+Zeigt den Speicherort eines Programms an.
+
 ```bash
 which nano
 ```
 
-### Bedeutung
-
-Zeigt den Speicherort eines Programms an.
-
-### Beispiel
+Beispiel:
 
 ```bash
 which python3
@@ -94,35 +90,31 @@ Mögliche Ausgabe:
 
 ## diff
 
+Vergleicht zwei Dateien und zeigt Unterschiede an.
+
 ```bash
 diff datei1.txt datei2.txt
 ```
 
-### Bedeutung
-
-Vergleicht zwei Dateien und zeigt Unterschiede an.
-
-### Beispiel
+Beispiel:
 
 ```bash
 diff alt.txt neu.txt
 ```
 
-Nützlich zum Vergleichen von Konfigurationsdateien oder Quellcode.
+Wird häufig verwendet, um Konfigurationsdateien oder Quellcode zu vergleichen.
 
 ---
 
 ## du
 
+Zeigt den belegten Speicherplatz von Dateien oder Verzeichnissen an.
+
 ```bash
 du -sh Ordner
 ```
 
-### Bedeutung
-
-Zeigt die Grösse eines Ordners an.
-
-### Beispiel
+Beispiel:
 
 ```bash
 du -sh Downloads
@@ -134,19 +126,21 @@ Mögliche Ausgabe:
 1.2G Downloads
 ```
 
+```{note}
+Die Option `-h` sorgt für eine menschenlesbare Ausgabe (KB, MB, GB).
+```
+
 ---
 
 ## df
+
+Zeigt die Auslastung der Dateisysteme an.
 
 ```bash
 df -h
 ```
 
-### Bedeutung
-
-Zeigt den verfügbaren und belegten Speicherplatz an.
-
-### Beispiel
+Beispiel:
 
 ```bash
 df -h
@@ -163,76 +157,63 @@ Filesystem      Size  Used Avail Use%
 
 ## tar
 
+Erstellt oder entpackt Archive.
+
+Archiv erstellen:
+
 ```bash
 tar -czf backup.tar.gz Ordner
 ```
 
-### Bedeutung
-
-Archiviert und komprimiert Dateien oder Ordner.
-
-### Beispiel
+Beispiel:
 
 ```bash
 tar -czf projekt.tar.gz Projekt
 ```
 
-Erstellt ein komprimiertes Archiv des Ordners `Projekt`.
+Extrahieren:
+
+```bash
+tar -xzf projekt.tar.gz
+```
 
 ---
 
 ## uname
 
-```bash
-uname -a
-```
-
-### Bedeutung
-
 Zeigt Informationen über das Betriebssystem und den Kernel an.
 
-### Beispiel
+```bash
+uname -a
+```
+
+Beispiel:
 
 ```bash
 uname -a
 ```
 
-Nützlich für Systemanalysen und Supportfälle.
+Typische Informationen:
+
+- Kernel-Version
+- Hostname
+- Architektur
+- Betriebssystem
 
 ---
 
 ## clear
 
-```bash
-clear
-```
-
-### Bedeutung
-
 Leert das Terminalfenster.
 
-### Beispiel
+```bash
+clear
+```
+
+Beispiel:
 
 ```bash
 clear
 ```
 
-Sorgt für eine übersichtliche Terminalansicht.
-
----
-
-## Merken für die Praxis
-
-| Befehl | Zweck |
-|----------|----------|
-| echo | Text ausgeben |
-| history | Befehlsverlauf anzeigen |
-| man | Handbuch anzeigen |
-| which | Programmpfad finden |
-| diff | Dateien vergleichen |
-| du | Ordnergrösse anzeigen |
-| df | Speicherplatz anzeigen |
-| tar | Dateien archivieren |
-| uname | Systeminformationen anzeigen |
-| clear | Terminal leeren |
-
+Entfernt die aktuelle Ausgabe vom Bildschirm und sorgt für eine übersichtliche Ansicht.
