@@ -1,12 +1,12 @@
-# 🔐 Dateirechte
+# Dateirechte
 
-Dateirechte bestimmen, wer eine Datei lesen, bearbeiten oder ausführen darf.
+Dateirechte legen fest, welche Benutzer auf Dateien und Verzeichnisse zugreifen dürfen und welche Aktionen erlaubt sind.
 
-Jede Datei besitzt Rechte für drei verschiedene Gruppen:
+Jede Datei besitzt Berechtigungen für drei Benutzergruppen:
 
 | Gruppe | Bedeutung |
-|----------|----------|
-| Besitzer (Owner) | Der Eigentümer der Datei |
+| :--- | :--- |
+| Besitzer (Owner) | Eigentümer der Datei |
 | Gruppe (Group) | Benutzer derselben Gruppe |
 | Andere (Others) | Alle übrigen Benutzer |
 
@@ -14,21 +14,21 @@ Jede Datei besitzt Rechte für drei verschiedene Gruppen:
 
 ## Rechte
 
-| Zeichen | Bedeutung | Zahl |
-|----------|----------|----------|
+Linux verwendet drei grundlegende Berechtigungen:
+
+| Zeichen | Bedeutung | Wert |
+| :---: | :--- | :---: |
 | `r` | Lesen (read) | 4 |
 | `w` | Schreiben (write) | 2 |
 | `x` | Ausführen (execute) | 1 |
 
-💡 **Hinweis**
+Bei Verzeichnissen haben die Rechte eine leicht andere Bedeutung:
 
-Bei Ordnern bedeutet:
-
-- `r` = Inhalt auflisten
-- `w` = Dateien erstellen oder löschen
-- `x` = Ordner betreten
-
-【1-d5ed6f】
+| Recht | Bedeutung |
+| :---: | :--- |
+| `r` | Inhalt anzeigen |
+| `w` | Dateien erstellen oder löschen |
+| `x` | Verzeichnis betreten |
 
 ---
 
@@ -45,20 +45,20 @@ Beispiel:
 ```
 
 | Teil | Bedeutung |
-|----------|----------|
-| `-` | Datei |
+| :---: | :--- |
+| `-` | Datei (`d` = Verzeichnis) |
 | `rwx` | Besitzer darf lesen, schreiben und ausführen |
 | `r-x` | Gruppe darf lesen und ausführen |
 | `r-x` | Andere dürfen lesen und ausführen |
 
 ---
 
-## Zahlen verstehen
+## Zahlenrechte
 
-Linux kann Rechte auch als Zahlen darstellen.
+Dateirechte können auch als Zahlen angegeben werden.
 
-| Rechte | Rechnung | Zahl |
-|----------|----------|----------|
+| Rechte | Rechnung | Wert |
+| :--- | :--- | :---: |
 | `rwx` | 4 + 2 + 1 | 7 |
 | `rw-` | 4 + 2 | 6 |
 | `r-x` | 4 + 1 | 5 |
@@ -71,7 +71,7 @@ Beispiel:
 rwxr-xr-x
 ```
 
-wird zu:
+entspricht:
 
 ```text
 755
@@ -81,17 +81,11 @@ wird zu:
 
 ## chmod
 
+Ändert die Berechtigungen einer Datei oder eines Verzeichnisses.
+
 ```bash
 chmod 755 script.sh
 ```
-
-### Bedeutung
-
-Ändert die Zugriffsrechte einer Datei.
-
-【2-40a046】
-
-### Beispiel
 
 Datei ausführbar machen:
 
@@ -99,131 +93,74 @@ Datei ausführbar machen:
 chmod +x script.sh
 ```
 
-Rechte direkt setzen:
+Weitere Beispiele:
 
 ```bash
-chmod 755 script.sh
+chmod 644 datei.txt
+chmod 700 script.sh
 ```
 
-Danach:
-
-```text
-rwxr-xr-x
-```
-
----
-
-## Häufig verwendete chmod-Werte
-
-| Wert | Rechte | Verwendung |
-|----------|----------|----------|
+| Wert | Rechte | Typische Verwendung |
+| :---: | :--- | :--- |
 | `755` | `rwxr-xr-x` | Skripte und Programme |
 | `644` | `rw-r--r--` | Normale Dateien |
-| `700` | `rwx------` | Nur Besitzer darf zugreifen |
-| `600` | `rw-------` | Private Dateien |
-
-💡 **Merkhilfe**
-
-```text
-7 = rwx
-6 = rw-
-5 = r-x
-4 = r--
-```
+| `700` | `rwx------` | Private Skripte |
+| `600` | `rw-------` | Vertrauliche Dateien |
 
 ---
 
 ## chown
 
-```bash
-chown benutzer datei.txt
-```
-
-### Bedeutung
-
-Ändert den Besitzer einer Datei.
-
-【3-c901b3】
-
-### Beispiel
+Ändert den Besitzer einer Datei oder eines Verzeichnisses.
 
 ```bash
 chown noemi dokument.txt
 ```
 
-Besitzer wird:
+Nach dem Befehl gehört die Datei dem Benutzer `noemi`.
 
-```text
-noemi
-```
-
----
-
-## Besitzer und Gruppe ändern
+Besitzer und Gruppe gleichzeitig ändern:
 
 ```bash
 chown noemi:developers projekt.txt
 ```
 
-### Bedeutung
-
-Ändert gleichzeitig:
-
-- Besitzer → `noemi`
-- Gruppe → `developers`
-
-【3-c901b3】
-
 ---
 
-## Rekursiv auf Ordner anwenden
+## Änderungen rekursiv anwenden
+
+Die Option `-R` wendet Änderungen auf einen Ordner sowie dessen gesamten Inhalt an.
+
+Berechtigungen ändern:
 
 ```bash
 chmod -R 755 projekt/
 ```
 
-oder
+Besitzer ändern:
 
 ```bash
 chown -R noemi:developers projekt/
 ```
 
-### Bedeutung
-
-Die Änderung wird auf den gesamten Ordner inklusive Unterordner und Dateien angewendet.
+```{warning}
+Die Option `-R` wirkt auf alle Dateien und Unterordner. Vor der Ausführung sollte immer geprüft werden, ob das Zielverzeichnis korrekt ist.
+```
 
 ---
 
-⚠️ **Warnung**
-
-Verwende niemals leichtfertig:
+## Sicherheitshinweis
 
 ```bash
 chmod 777 datei.txt
 ```
 
-Dann dürfen alle Benutzer:
+Mit dieser Berechtigung dürfen alle Benutzer:
 
 - lesen
 - schreiben
 - ausführen
 
-Das stellt oft ein Sicherheitsrisiko dar.
-
-【1-d5ed6f】
-
----
-
-💡 **Für die Praxis**
-
-Die wichtigsten Befehle für Schule, Lehre und Alltag sind:
-
-```bash
-ls -l
-chmod +x script.sh
-chmod 755 script.sh
-chmod 644 datei.txt
-chown benutzer datei.txt
+```{warning}
+Die Berechtigung `777` sollte nur in Ausnahmefällen verwendet werden, da jeder Benutzer vollständigen Zugriff auf die Datei erhält.
 ```
-
-Mit diesen Befehlen lassen sich die meisten Aufgaben zu Dateirechten lösen.
