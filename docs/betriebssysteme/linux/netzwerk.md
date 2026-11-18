@@ -1,40 +1,40 @@
 # Netzwerk
 
-Wichtige Linux-Befehle zur Analyse und Verwaltung von Netzwerken.
+Wichtige Befehle zur Analyse, Überprüfung und Verwaltung von Netzwerkverbindungen unter Linux.
 
 ---
 
 ## ping
 
+Prüft, ob ein Host oder Server erreichbar ist.
+
 ```bash
 ping google.ch
 ```
 
-### Bedeutung
-
-Prüft, ob ein Host oder Server erreichbar ist.
-
-### Beispiel
+Beispiel:
 
 ```bash
 ping 8.8.8.8
 ```
 
-Sendet Testpakete an den DNS-Server von Google.
+Sendet Testpakete an den öffentlichen DNS-Server von Google.
+
+```{note}
+Mit `Strg + C` wird der laufende Ping beendet.
+```
 
 ---
 
 ## ssh
 
+Stellt eine verschlüsselte Verbindung zu einem anderen System her.
+
 ```bash
 ssh user@server
 ```
 
-### Bedeutung
-
-Stellt eine verschlüsselte Verbindung zu einem anderen Rechner her.
-
-### Beispiel
+Beispiel:
 
 ```bash
 ssh noemi@192.168.1.100
@@ -42,39 +42,39 @@ ssh noemi@192.168.1.100
 
 Verbindet sich mit dem Benutzer `noemi` auf dem Zielsystem.
 
+```{note}
+SSH wird häufig für die Fernverwaltung von Linux-Servern verwendet.
+```
+
 ---
 
 ## ip
+
+Zeigt Netzwerkinformationen und IP-Adressen an.
 
 ```bash
 ip addr
 ```
 
-### Bedeutung
-
-Zeigt die Netzwerkinterfaces und IP-Adressen an.
-
-### Beispiel
+Beispiel:
 
 ```bash
 ip addr show
 ```
 
-Zeigt alle verfügbaren Netzwerkadapter.
+Zeigt alle verfügbaren Netzwerkinterfaces und deren Konfiguration an.
 
 ---
 
 ## hostname
 
+Zeigt den Hostnamen des aktuellen Systems an.
+
 ```bash
 hostname
 ```
 
-### Bedeutung
-
-Zeigt den Namen des aktuellen Computers an.
-
-### Beispiel
+Beispiel:
 
 ```bash
 hostname
@@ -90,75 +90,75 @@ server01
 
 ## nslookup
 
+Fragt DNS-Informationen zu einem Hostnamen ab.
+
 ```bash
 nslookup google.ch
 ```
 
-### Bedeutung
-
-Fragt DNS-Informationen ab.
-
-### Beispiel
+Beispiel:
 
 ```bash
 nslookup github.com
 ```
 
-Zeigt die zugehörige IP-Adresse an.
+Zeigt die zugehörigen DNS-Einträge und IP-Adressen an.
 
 ---
 
 ## traceroute
 
+Zeigt den Weg der Netzwerkpakete bis zum Zielsystem.
+
 ```bash
 traceroute google.ch
 ```
 
-### Bedeutung
-
-Zeigt den Weg der Pakete bis zum Zielserver.
-
-### Beispiel
+Beispiel:
 
 ```bash
 traceroute 8.8.8.8
 ```
 
-Hilft bei der Fehlersuche im Netzwerk.
+Hilft bei der Analyse von Netzwerkproblemen und Verbindungswegen.
+
+```{note}
+Auf einigen Distributionen muss `traceroute` zuerst installiert werden.
+```
 
 ---
 
 ## netstat
 
+Zeigt Netzwerkverbindungen und offene Ports an.
+
 ```bash
 netstat -tuln
 ```
 
-### Bedeutung
-
-Zeigt offene Netzwerkverbindungen und Ports an.
-
-### Beispiel
+Beispiel:
 
 ```bash
 netstat -an
 ```
 
-Listet aktive Verbindungen auf.
+Listet aktive Verbindungen und offene Ports auf.
+
+```{note}
+Auf modernen Linux-Systemen wird häufig `ss` anstelle von `netstat` verwendet.
+```
 
 ---
 
 ## ss
 
+Moderner Ersatz für `netstat`.
+
 ```bash
 ss -tuln
 ```
 
-### Bedeutung
-
-Moderner Ersatz für `netstat`.
-
-### Beispiel
+Beispiel:
 
 ```bash
 ss -tuln
@@ -170,55 +170,38 @@ Zeigt offene TCP- und UDP-Ports an.
 
 ## curl
 
+Ruft Daten von Webseiten oder APIs ab.
+
 ```bash
 curl https://example.com
 ```
 
-### Bedeutung
-
-Ruft Daten von Webseiten oder APIs ab.
-
-### Beispiel
+Beispiel:
 
 ```bash
 curl https://api.github.com
 ```
 
-Zeigt die Antwort der GitHub-API an.
+Zeigt die Antwort der GitHub-API direkt im Terminal an.
 
 ---
 
 ## wget
 
+Lädt Dateien aus dem Internet herunter.
+
 ```bash
 wget https://example.com/datei.zip
 ```
 
-### Bedeutung
-
-Lädt Dateien aus dem Internet herunter.
-
-### Beispiel
+Beispiel:
 
 ```bash
 wget https://example.com/setup.zip
 ```
 
-Speichert die Datei lokal.
+Speichert die Datei im aktuellen Verzeichnis.
 
----
-
-## Merken für die Praxis
-
-| Befehl | Zweck |
-|---------|---------|
-| ping | Erreichbarkeit testen |
-| ssh | Remote-Verbindung herstellen |
-| ip | Netzwerkinformationen anzeigen |
-| hostname | Gerätenamen anzeigen |
-| nslookup | DNS-Abfragen durchführen |
-| traceroute | Netzwerkpfad analysieren |
-| netstat | Verbindungen anzeigen |
-| ss | Offene Ports anzeigen |
-| curl | Webseiten und APIs abrufen |
-| wget | Dateien herunterladen |
+```{note}
+Mit `wget` können Downloads bei Bedarf fortgesetzt werden.
+```
