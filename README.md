@@ -15,8 +15,6 @@ It contains notes, cheat sheets, summaries and explanations of concepts I learne
 - **Web Development:** HTML, CSS, JavaScript, DOM, Canvas, Vue.js
 - **Glossary:** short definitions of common IT terms
 
-Planned: Business Analysis.
-
 ## Build locally
 
 You only need this if you want to work on the docs yourself.
