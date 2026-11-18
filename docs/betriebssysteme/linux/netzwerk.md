@@ -29,7 +29,7 @@ Wichtige Befehle zur Analyse, Überprüfung und Verwaltung von Netzwerkverbindun
 
 Als Ablauf bei der Fehlersuche – von deinem System aus nach aussen:
 
-```mermaid
+```{mermaid}
 flowchart LR
     A["1. Eigene IP<br>ip / hostname"] --> B["2. Erreichbarkeit<br>ping"]
     B --> C{"DNS klappt?"}
