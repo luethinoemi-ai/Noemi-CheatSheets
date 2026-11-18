@@ -1,6 +1,6 @@
 # Suche
 
-Linux bietet verschiedene Werkzeuge, um Dateien, Verzeichnisse, Programme oder Inhalte schnell zu finden.
+Linux bietet verschiedene Werkzeuge, um Dateien, Verzeichnisse, Programme und Inhalte schnell zu finden.
 
 ---
 
@@ -28,146 +28,145 @@ Alle JSON-Dateien suchen:
 find . -name "*.json"
 ```
 
-Nur*Dateien suchen:
+Nur Dateien *uchen:
 
 ```bash
-find . -t*pe f
-```
-
-Nur Verzeichnisse suchen*
-
-*``bash
-find . -type d
+find . -type f
 ``*
 
-Alle Textdateien suchen:
+Nur Verzeichnisse suchen:
 
-*``bash
-find . -type f -name*"*.txt"
+```ba*h
+*ind . -type d
 ```
 
-```{note}
-Der*Punkt (`.`) steht für das aktuelle*Verzeichnis*
+Alle Text*ateien suchen:
+
+```bash
+find . -*ype f -name "*.txt"
 ```
 
----
+```*note}
+Der Punkt (`.`) steht für*das aktuelle Verzeichnis.
+```
 
+---*
 ## grep
 
-Sucht nach*Text innerhalb einer Datei.
+Sucht*nach Text innerhalb einer Datei.
 
-###*Syntax
+*##*Syntax
 
 ```bash
 grep "<text>"*<datei>
 ```
 
-### Beispiel
+### Beispiele
 
 Nach "*ebSocket" suchen:
 
 ```bash
-grep "*ebSocket" datei.txt
+grep*"WebSocket" datei.txt
 ```
 
-In*einer Log-Date* nach Fehlern suchen:
+Nach*Fehlern in einer Log-Date* suchen:
 
 ```bash
-gre**"ERROR" logfile.log
+grep "ERROR"*logfile.log
 ```
 
 ---
 
-##*grep -i
+## grep -i*
+Sucht unter Ignorierung*von Gross- und Kleinschreibung.
 
-Ignoriert Gross- und*Kleinschreibung.
+#*#*Beispiel
 
-### Beispiel
-
-``*bash*grep -i "noemi" benutzer*txt
+```bash
+grep -i "no*mi" benutzer.txt
 ```
 
-Findet beispielsweise*
+Findet*beispielsweise:
 
 ```text
 Noemi
-NOEMI*noemi
+NOE**
+noemi
 ```
 
 ---
 
-## grep -*
+## grep*-R
 
-Durchsucht alle*Dateien und Unterverzeichnisse.
+Durchsucht Dateien*und Unterverzeichnisse rekursiv.
 
-*## Beispiel
+*##*Beispiel
 
 ```bash
-grep -R "*ebSocket" .
+grep -R "Web*ocket" .
 ```
 
-Durch*ucht das gesamte aktuelle Verzeich*is rek*rsiv.
+Durchsucht das gesam*e*aktuelle Verzeichnis.
 
 ---
 
-## locate
+## loc*te
 
-Sucht Datei*n*mithilfe einer Daten*ank.
-
-### Beispiel
-
-```bash
-locate*config.json
-```
-
-```{note}
-`*ocate` ist meist deutlich schnelle* als `*ind`, da es nicht direkt das*Dateisystem durchsucht.
-```
-
-D*tenbank aktualisieren:
+Sucht*Dateien mithilfe einer Datenbank.
+*### Beispiel
 
 ```bash
-su*o updated*
+locate confi*.json
+```
+
+*``{note}
+`locate` ist häufig*schneller als `find`, da nicht dir*kt*das Dateisystem durchsucht wird.
+`*`
+
+*atenbank aktualisieren:
+
+```bash
+s*do updatedb
 ```
 
 ---
 
 ## which
 
-Zeigt*den Speicherort eines Programms an*
+Ze*gt den Speicherort eines Programms*an.
 
-### Beispiel*
+###*Beispiel
+
 ```bash
 which python3
+``*
+
+Mögliche Ausgabe:
+
+```text
+/usr*bin/python3
+```
+
+---
+
+## whereis*
+Zeigt Programmdateien, Handbuchse*ten*und weitere zugehörige Dateien an.*
+### Beispiel*
+```bash
+whereis ssh
 ```
 
 *ögliche Ausgabe:
 
 ```text
-/usr/bin*python3
+ssh:*/usr/bin/ssh /usr/share/man/man*/ssh.1.gz
 ```
 
 ---
 
-## whereis
+*# Praktische Beispiele
 
-*eigt Programmdateien, Hand*uchseiten und weitere zugehörige D*teien an*
-
-### Beispiel
-
-```bash
-whereis ss**```
-
-Mögliche Ausgabe:
-
-```text*ssh: /usr/bin/ssh /usr*share/man/man1/ssh.1.gz
-*``
-
----
-
-## Praktische Kombination*n
-
-Date*en finden:
+Dateien fi*den:
 
 *``bash
 find . -name "*.txt"
@@ -182,17 +181,3 @@ Python-Installation prüfen:
 ```*ash*which python3
 whereis python3
 *``
-
----
-
-## Häufig verwend*te Befehle
-
-| Befehl |*Verwendung |
-| :--- |*:--- |
-| `find`*| Dateien und Verzeichnisse suchen*|
-|*`grep` | Text in Dateien suchen |
-* `grep -R` | Rekursiv suchen*|
-| `grep -i` | Gross-*und Kleinschreibung ignorieren |
-|*`*ocate` | Dateien über*eine Datenbank suchen |
-| `which` **Programmpfad anzeigen |
-| `where*s` | Programmdateien und*Dokumentation finden*|
