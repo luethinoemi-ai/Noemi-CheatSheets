@@ -26,8 +26,8 @@ Linux bietet verschiedene Werkzeuge, um Dateien, Ordner, Programmpfade und Texti
 
 Welches Suchwerkzeug passt zu deiner Aufgabe?
 
-```mermaid
-flowchart TD
+```{mermaid}
+flowchart LR
     A["Was suchst du?"] --> B{"Dateiname, Textinhalt<br>oder Programm?"}
     B -->|Dateiname / Ordner| C{"Sofort aktuell oder<br>sehr schnell?"}
     C -->|Live & flexibel| D["find . -name ..."]
