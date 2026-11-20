@@ -107,7 +107,7 @@ history
 | `history \| grep nano` | Verlauf nach einem Wort durchsuchen |
 
 ```{note}
-Mit der Pfeiltaste nach oben holst du ebenfalls frühere Befehle zurück (siehe {ref}`Tipps zum Terminal <linux-terminal>`). Mehr zu `grep`: {doc}`suche`.
+Mit der Pfeiltaste nach oben holst du ebenfalls frühere Befehle zurück (siehe {ref}`Terminal und Shell <linux-terminal>`). Mehr zu `grep`: {doc}`suche`.
 ```
 
 ---
