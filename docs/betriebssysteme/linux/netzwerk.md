@@ -135,7 +135,7 @@ traceroute 8.8.8.8
 ```{admonition} Hinweis
 :class: note
 
-Auf einigen Linux-Systemen ist `traceroute` nicht vorinstalliert und muss zuerst über den Paketmanager nachinstalliert werden (siehe {doc}`basics`).
+Auf einigen Linux-Systemen ist `traceroute` nicht vorinstalliert und muss zuerst über den Paketmanager nachinstalliert werden.
 ```
 
 (linux-net-ports)=
@@ -195,13 +195,13 @@ ssh -p 2222 noemi@192.168.1.100
 Ruft Daten von Webseiten oder APIs ab und gibt die Antwort direkt im Terminal aus.
 
 ```bash
-curl [https://api.github.com](https://api.github.com)
+curl https://api.github.com
 ```
 
 **Nur HTTP-Header und Statuscode prüfen:**
 
 ```bash
-curl -I [https://google.ch](https://google.ch)
+curl -I https://google.ch
 ```
 
 (linux-net-wget)=
@@ -210,13 +210,13 @@ curl -I [https://google.ch](https://google.ch)
 Lädt Dateien aus dem Internet herunter und speichert sie im aktuellen Verzeichnis (siehe {doc}`navigation`).
 
 ```bash
-wget [https://example.com/setup.zip](https://example.com/setup.zip)
+wget https://example.com/setup.zip
 ```
 
 **Abgebrochenen Download fortsetzen:**
 
 ```bash
-wget -c [https://example.com/setup.zip](https://example.com/setup.zip)
+wget -c https://example.com/setup.zip
 ```
 
 - [](#linux-net-curl) eignet sich zum Testen von APIs und Weiterverarbeiten im Terminal.
@@ -230,7 +230,7 @@ wget -c [https://example.com/setup.zip](https://example.com/setup.zip)
 | `Name or service not known` | Tippfehler in der Domain oder kein DNS | Domain prüfen und mit [](#linux-net-nslookup) testen |
 | `Connection refused` | Server erreichbar, aber Dienst/Port läuft nicht | Auf dem Zielserver offene Ports mit [](#linux-net-ss) prüfen |
 | `Network is unreachable` | Keine aktive Netzwerkverbindung / kein Gateway | Eigene IP und Route mit [](#linux-net-ip) prüfen |
-| `command not found` | Tool (z. B. `traceroute`) fehlt | Paket über den Paketmanager installieren ({doc}`basics`) |
+| `command not found` | Tool (z. B. `traceroute`) fehlt | Paket über den Paketmanager installieren |
 
 (linux-net-ablauf)=
 ## Beispiel: Ein kleiner Ablauf
@@ -245,7 +245,11 @@ ssh noemi@192.168.1.100       # Auf Zielserver verbinden
 
 Laufende Netzwerkdienste und Prozesse verwalten: {doc}`prozesse`.
 
-```{admonition} Merksätze
+---
+
+## Merksätze
+
+```{admonition} Das Wichtigste in Kürze
 :class: important
 
 1. `ip a` zeigt deine eigene IP, `hostname -I` gibt sie kompakt aus.
@@ -254,6 +258,8 @@ Laufende Netzwerkdienste und Prozesse verwalten: {doc}`prozesse`.
 4. `ss -tuln` ersetzt das veraltete `netstat` für offene Ports.
 5. `ssh` verbindet auf fremde Server, `curl` testet APIs, `wget` lädt Dateien herunter.
 ```
+
+---
 
 ## Weiterführend (offizielle Dokumentation)
 
